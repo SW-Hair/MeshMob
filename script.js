@@ -37,9 +37,10 @@ scene.on("update", e => {
     scrollpos = e.scrollPos / 1000;
 });
 
-setInterval(() => {
+function updateVideoTime() {
     delay += (scrollpos - delay) * accelamount;
     delay = parseFloat(delay.toFixed(2));
-    console.log(scrollpos, delay);
-    video.currentTime = delay
-}, 250);
+    video.currentTime = delay;
+    requestAnimationFrame(updateVideoTime);
+}
+updateVideoTime();
