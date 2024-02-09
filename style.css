@@ -11,10 +11,13 @@ body {
 
 .intro {
   height: 100vh;
+  overflow: hidden;
 }
 
 .intro video {
     width: 100%;
+    height: auto;
+    display: block;
 }
 
 .intro h1 {
